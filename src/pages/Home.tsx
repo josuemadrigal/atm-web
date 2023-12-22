@@ -18,7 +18,7 @@ const Home = () => {
 
       <Team />
       <Contacts />
-      <p>(Contact form)</p>
+
       <p>
         Phone +1 (561) 608-0446 - Addresses 13727 SW 152ND ST NUM 660 MIAMI FL
         33177
