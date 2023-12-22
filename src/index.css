@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.dark-mode {
+  @apply bg-gray-900 text-white;
+}

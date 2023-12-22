@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 //import { useScroll } from "framer-motion";
+import DarkModeToggle from "../components/DarkModeToggle";
 
 import {
   IconBrandTwitter,
@@ -122,6 +123,7 @@ export default function Navbar() {
           ))}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+          <DarkModeToggle />
           <Group
             spacing={0}
             className="hover:stroke-sky-500"

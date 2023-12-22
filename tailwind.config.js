@@ -1,10 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: "class",
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
-        greenEduard: "#0e7736", // Agrega tu color hexadecimal personalizado aquí
+        greenEduard: "#eab308",
       },
     },
   },
