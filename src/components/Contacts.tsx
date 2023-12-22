@@ -1,6 +1,29 @@
-import React from "react";
+import { useState } from "react";
 
 const Contacts = () => {
+  const [destinatario, setDestinatario] = useState("");
+  const [mensaje, setMensaje] = useState("");
+
+  const enviarMensaje = async () => {
+    try {
+      const response = await fetch("http://localhost:3001/enviar-mensaje", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ destinatario, mensaje }),
+      });
+
+      if (response.ok) {
+        console.log("Mensaje enviado con éxito");
+      } else {
+        console.error("Error al enviar el mensaje");
+      }
+    } catch (error) {
+      console.error("Error de red", error);
+    }
+  };
+
   return (
     <div className="flex justify-center ">
       <div className="flex md:flex-row flex-col justify-center max-w-7xl m-4 ">

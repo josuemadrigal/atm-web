@@ -1,11 +1,11 @@
 const Hero2 = () => {
   return (
     <section className="bg-white dar k:bg-gray-900 relative h-screen overflow-hidden">
-      <img
+      {/* <img
         src="/public/image-atm.jpg"
-        className="absolute justify-end object-cover w-screen h-screen "
-      />
-      <section className="relative bg-opacity-80   md:pt-2 bg-gradient-to-tr from-[#18182eed] from-40% via-[#37330595] to-[#7a6f08] h-screen w-full">
+        className=" justify-end object -cover w-screen h-screen "
+      /> */}
+      {/* <section className="relative bg-opacity-80   md:pt-2 bg-gradient-to-tr from-[#18182eed] from-40% via-[#37330595] to-[#7a6f08] h-screen w-full">
         <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
           <div className="mr-auto place-self-center lg:col-span-7">
             <h1 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
@@ -48,8 +48,8 @@ const Hero2 = () => {
             />
           </div>
         </div>
-      </section>
-      {/* <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
+      </section> */}
+      <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
         <a
           href="#"
           className="inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700"
@@ -222,7 +222,7 @@ const Hero2 = () => {
             </a>
           </div>
         </div>
-      </div> */}
+      </div>
     </section>
   );
 };
