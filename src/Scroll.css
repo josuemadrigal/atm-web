@@ -7,12 +7,12 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #073a7c;
+  background: rgb(31, 44, 63);
 }
-#
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #041553;
+  background: rgb(59, 81, 113);
 }
 
 /* Handle on hover */

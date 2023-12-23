@@ -14,29 +14,15 @@ import { ActionIcon, Group } from "@mantine/core";
 
 const navigation = [
   { name: "Inicio", href: "/", current: true },
-  { name: "Opción 2", href: "/", current: false },
+  { name: "Services", href: "#services", current: false },
   {
-    name: "Opción 3",
-    href: "/gestion-legislativa",
-    subMenu: [
-      { name: "Opción 3 1", href: "/" },
-      { name: "Opción 3 2", href: "/" },
-    ],
+    name: "Benefits",
+    href: "#benefits",
     current: false,
   },
   {
-    name: "Opción 4",
-    href: "/",
-    subMenu: [
-      {
-        name: "Opción 4 1",
-        href: "/",
-      },
-      {
-        name: "Opción 4 2",
-        href: "/",
-      },
-    ],
+    name: "Contacts Us",
+    href: "#contacts",
     current: false,
   },
 ];
@@ -77,14 +63,23 @@ export default function Navbar() {
     <div className={`fixed z-50 w-full `}>
       <nav
         className={`flex items-center justify-between p-2 will-change-scroll bg-scroll lg:px-8 transition-all duration-700 ${
-          scrolling ? "bg-gray-950" : "bg-transparent"
+          scrolling ? "bg-gray-800" : "bg-transparent"
         }`}
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
           <a href="/" className="-m-1.5 p-1.5">
-            <span className="sr-only">Eduard Espiritusanto</span>
-            <img className="h-10 ml-10 w-auto" src="/logo-example.png" alt="" />
+            <span className="sr-only">I & P ATM</span>
+            <img
+              className="h-10 ml-10 w-auto hidden dark:block"
+              src="/logo-ip-white.svg"
+              alt="dark mode logo"
+            />
+            <img
+              className="h-10 ml-10 w-auto block dark:hidden"
+              src="/logo-ip-black.svg"
+              alt="light mode logo"
+            />
           </a>
         </div>
         <div className="flex lg:hidden">
@@ -93,7 +88,7 @@ export default function Navbar() {
             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-100"
             onClick={() => setMobileMenuOpen(true)}
           >
-            <span className="sr-only">Abrir menú</span>
+            <span className="sr-only">Open</span>
             <Bars3Icon className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
@@ -102,23 +97,10 @@ export default function Navbar() {
             <div key={item.name} className="relative group">
               <a
                 href={item.href}
-                className="text-sm font-semibold leading-6 text-white hover:text-amber-300 active:text-amber-300"
+                className="text-sm font-semibold leading-6 text-gray-900 dark:text-white  hover:text-amber-300 active:text-amber-300"
               >
                 {item.name}
               </a>
-              {item.subMenu && (
-                <div className="absolute top-full w-52 p-1 bg-greenEduard rounded-md py-2 hidden group-hover:block">
-                  {item.subMenu.map((subItem) => (
-                    <a
-                      key={subItem.name}
-                      href={subItem.href}
-                      className="block px-3 py-2 w- text-sm font-semibold rounded-md leading-6 text-gray-100 hover:bg-green-800 hover:text-amber-300"
-                    >
-                      {subItem.name}
-                    </a>
-                  ))}
-                </div>
-              )}
             </div>
           ))}
         </div>
@@ -134,12 +116,12 @@ export default function Navbar() {
               size="lg"
               className=" hover:bg-white hover:stroke-sky-500"
             >
-              <a href="https://www.instagram.com/eduardespiritusanto/">
+              <a href="#">
                 <IconBrandTwitter className="stroke-white" size="1.05rem" />
               </a>
             </ActionIcon>
             <ActionIcon size="lg">
-              <a href="https://www.instagram.com/eduardespiritusanto/">
+              <a href="#">
                 <IconBrandYoutube
                   className="hover:text-red-500 "
                   size="1.05rem"
@@ -148,7 +130,7 @@ export default function Navbar() {
               </a>
             </ActionIcon>
             <ActionIcon size="lg">
-              <a href="https://www.instagram.com/eduardespiritusanto/">
+              <a href="https://www.instagram.com/">
                 <IconBrandInstagram
                   className="hover:text-rose-300 "
                   size="1.05rem"
@@ -170,8 +152,8 @@ export default function Navbar() {
         <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-stone-50 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Eduard Espiritusanto</span>
-              <img className="h-8 w-auto" src="/logo-fp.png" alt="" />
+              <span className="sr-only">I & P ATM</span>
+              <img className="h-8 w-auto" src="/logo-ip-black.svg" alt="" />
             </a>
 
             <button
@@ -195,14 +177,6 @@ export default function Navbar() {
                     {item.name}
                   </a>
                 ))}
-              </div>
-              <div className="py-6">
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Registro
-                </a>
               </div>
             </div>
           </div>
