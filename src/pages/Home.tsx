@@ -2,7 +2,6 @@ import AboutUs from "../components/AboutUs";
 import Benefits from "../components/Benefits";
 import Contacts from "../components/Contacts";
 import Hero2 from "../components/Hero2";
-import Services from "../components/Services";
 import Team from "../components/Team";
 
 // import Instagram from "../components/Instagram";
@@ -13,7 +12,6 @@ const Home = () => {
       <Hero2 />
       <AboutUs />
 
-      <Services />
       <Benefits />
 
       <Team />

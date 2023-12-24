@@ -55,7 +55,7 @@ const Hero2 = () => {
         </div>
       </section> */}
       <div className="relative bg-opacity-80   md:pt-2 bg-gradient-to-tr from-[#e6e8edf1] from-40% via-[#e6e8edf1] to-[#e6e8edf1] dark:from-[#1d2841f1] dark:from-40% dark:via-[#1d2841de] dark:to-[#1d2841f1] h-screen items-center flex ">
-        <div className="z-10 py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12 bg-r ed-500">
+        <div className="z- 10 py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12 bg-r ed-500">
           <a
             href="#"
             className="inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700"

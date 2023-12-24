@@ -37,9 +37,9 @@ const Team = () => {
         </div>
         <div className="grid gap-12 md:grid-cols-2 mx-96">
           {teamData.map((team) => (
-            <div className="space-y-6 text-center">
+            <div className="space-y-6 text-center bg-emera ld-600">
               <img
-                className="mx-auto h-64 w-64 rounded-full object-cover md:h-40 md:w-40 lg:h-64 lg:w-64"
+                className="mx -auto h-64 w-64 rounded-full object-cover md:h-40 md:w-40 lg:h-64 lg:w-64"
                 src={team.image}
                 alt="woman"
                 loading="lazy"

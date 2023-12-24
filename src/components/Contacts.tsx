@@ -25,9 +25,12 @@ const Contacts = () => {
   };
 
   return (
-    <div id="contacts" className="flex justify-center ">
-      <div className="flex md:flex-row flex-col justify-center max-w-7xl m-4 ">
-        <div className="lg:w-1/2 bg-gray-100 ">
+    <div
+      id="contacts"
+      className="flex justify-center  bg-gray-100 dark:bg-neutral-300"
+    >
+      <div className="flex md:flex-row flex-col justify-center max-w-7xl  bg-green-900 ">
+        <div className="lg:w-1/2 items-center bg-orange-500">
           <div className="flex justify-center flex-col items-center">
             <div className="text-gray-900 m-6 text-xl z-200"> Contact Us </div>
             <div className="text-gray-900 m-6 z-200">
