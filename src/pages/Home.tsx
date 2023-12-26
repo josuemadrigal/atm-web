@@ -1,6 +1,5 @@
 import AboutUs from "../components/AboutUs";
 import Benefits from "../components/Benefits";
-import Contacts from "../components/Contacts";
 import ContactsDos from "../components/ContactsDos";
 import Hero2 from "../components/Hero2";
 import Team from "../components/Team";

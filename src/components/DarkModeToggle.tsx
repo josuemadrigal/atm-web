@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useTheme } from "../hooks/useTheme";
+// import { useTheme } from "../hooks/useTheme";
 
 import { BsMoonStarsFill } from "react-icons/bs";
 import { FaSun } from "react-icons/fa6";

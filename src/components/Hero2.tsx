@@ -4,9 +4,12 @@ import { IoIosArrowForward } from "react-icons/io";
 
 const Hero2 = () => {
   return (
-    <section className="bg-white dark:bg-gray-900 relative h-screen overflow-hidden">
+    <section
+      id="home"
+      className="bg-white dark:bg-gray-900 relative h-screen overflow-hidden"
+    >
       <img
-        src="/public/banner2.jpeg"
+        src="/banner2.jpeg"
         className="absolute justify-end object-cover w-full h-full "
       />
 

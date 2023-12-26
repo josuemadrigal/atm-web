@@ -1,7 +1,7 @@
 import { TbClock24 } from "react-icons/tb";
 import { GrAtm } from "react-icons/gr";
 import { GrTransaction } from "react-icons/gr";
-import { MdPublishedWithChanges } from "react-icons/md";
+
 import { BiWorld } from "react-icons/bi";
 
 const Benefits = () => {
@@ -28,7 +28,7 @@ const Benefits = () => {
     },
   ];
   return (
-    <section className="text-gray-600 body-font bg-[#f8f8ff]">
+    <section id="benefits" className="text-gray-600 body-font bg-[#f8f8ff]">
       <div className="container px-5 py-24 mx-auto">
         <div className="text-center mb-20">
           <h1 className="sm:text-3xl text-2xl font-medium title-font text-[#0D1717] mb-4">

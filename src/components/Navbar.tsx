@@ -13,7 +13,7 @@ import {
 import { ActionIcon, Group } from "@mantine/core";
 
 const navigation = [
-  { name: "Inicio", href: "/", current: true },
+  { name: "Home", href: "/", current: true },
   { name: "Services", href: "#services", current: false },
   {
     name: "Benefits",
@@ -72,12 +72,12 @@ export default function Navbar() {
             <span className="sr-only">I & P ATM</span>
             <img
               className="h-10 ml-10 w-auto hidden dark:block"
-              src="/public/logo-ip-02.svg"
+              src="/logo-ip-04.svg"
               alt="dark mode logo"
             />
             <img
               className="h-10 ml-10 w-auto block dark:hidden"
-              src="/public/logo-ip-01.svg"
+              src="/logo-ip-03.svg"
               alt="light mode logo"
             />
           </a>

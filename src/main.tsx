@@ -3,8 +3,6 @@ import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
 
-const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-
 // En tu archivo TypeScript o JavaScript principal
 
 // Aplicar el tema almacenado al cargar la página

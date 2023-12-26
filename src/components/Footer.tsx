@@ -3,38 +3,34 @@ const Footer = () => {
     <footer className="w-full bg-gray-100 dark:bg-gray-900 py-16">
       <div className="md:px-12 lg:px-28">
         <div className="container m-auto space-y-6 text-gray-600 dark:text-gray-300">
-          <img
-            src="/public/logo-ip-02.svg"
-            alt="logo"
-            className="m-auto w-28"
-          />
+          <img src="logo-ip-04.svg" alt="logo" className="m-auto w-28" />
           <ul
             role="list"
             className="flex flex-col items-center justify-center gap-4 py-4 sm:flex-row sm:gap-8"
           >
             <li role="listitem">
-              <a href="#" className="hover:text-primary">
+              <a href="#home" className="hover:text-primary">
                 Home
               </a>
             </li>
             <li role="listitem">
               <a href="#" className="hover:text-primary">
-                Features
+                Services
               </a>
             </li>
             <li role="listitem">
-              <a href="#" className="hover:text-primary">
-                Get started
+              <a href="#benefits" className="hover:text-primary">
+                Benefits
               </a>
             </li>
             <li role="listitem">
-              <a href="#" className="hover:text-primary">
+              <a href="#aboutUs" className="hover:text-primary">
                 About us
               </a>
             </li>
           </ul>
           <div className="m-auto flex w-max items-center justify-between space-x-4">
-            <a href="tel:+243996660436" aria-label="call">
+            <a href="tel:+123456789" aria-label="call">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -81,7 +77,7 @@ const Footer = () => {
 
           <div className="text-center">
             <span className="text-sm tracking-wide">
-              Copyright © tailus <span id="year"></span> | All right reserved
+              Copyright © I & P ATM <span id="year"></span> - All right reserved
             </span>
           </div>
         </div>

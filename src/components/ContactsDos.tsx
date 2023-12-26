@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
+import Loader from "./LoaderSpin";
+import { FaCheckCircle } from "react-icons/fa";
 
 const ContactsDos = () => {
   const dataContact = [
@@ -23,23 +25,84 @@ const ContactsDos = () => {
       href: "mailto:info@example.com",
     },
   ];
-  const [status, setStatus] = useState("");
+  const [loading, setLoading] = useState(false);
   const [nombre, setNombre] = useState("");
-  const [destinatario, setDestinatario] = useState("");
+  const [email, setEmail] = useState("");
+  const [telefono, setTelefono] = useState("");
+  const [errores, setErrores] = useState<{ [key: string]: string }>({});
   const [mensaje, setMensaje] = useState("");
+  const [status, setStatus] = useState("");
+
+  const validarFormulario = () => {
+    let erroresTemp: { [key: string]: string } = {};
+
+    if (!nombre.trim()) {
+      erroresTemp.nombre = "El nombre es obligatorio";
+    }
+
+    // Expresión regular simple para validar un formato de correo electrónico básico
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      erroresTemp.email = "Ingresa un correo electrónico válido";
+    }
+
+    // Expresión regular para validar un número de teléfono (10 dígitos)
+    const telefonoRegex = /^\(\d{3}\) \d{3}-\d{4}$/;
+    if (!telefonoRegex.test(telefono)) {
+      erroresTemp.telefono =
+        "Ingresa un número de teléfono válido (formato: (xxx) xxx-xxxx)";
+    }
+
+    setErrores(erroresTemp);
+
+    // Retorna true si no hay errores
+    return Object.keys(erroresTemp).length === 0;
+  };
+
+  const handleTelefonoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const valor = e.target.value.replace(/\D/g, ""); // Elimina cualquier caracter no numérico
+    const formattedTelefono = formatTelefono(valor);
+    setTelefono(formattedTelefono);
+  };
+
+  const formatTelefono = (telefono: string) => {
+    const match = telefono.match(/^(\d{3})(\d{0,3})(\d{0,4})$/);
+    if (match) {
+      const formattedTelefono = `(${match[1]})${
+        match[2] ? ` ${match[2]}` : ""
+      }${match[3] ? `-${match[3]}` : ""}`;
+      return formattedTelefono;
+    }
+    return telefono;
+  };
+
+  const handleEnviarClick = (e: React.FormEvent) => {
+    e.preventDefault();
+    validarFormulario();
+    if (validarFormulario()) {
+      enviarMensaje();
+      setLoading(true);
+    }
+  };
 
   const enviarMensaje = async () => {
     const name = nombre.split(" ")[0];
     try {
-      const response = await fetch("http://localhost:3001/enviar-mensaje", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name, destinatario, mensaje }),
-      });
+      const response = await fetch(
+        "http://server.jmmultimediard.com/enviar-mensaje",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ name, email, mensaje }),
+        }
+      );
+
+      await new Promise((resolve) => setTimeout(resolve, 2000));
 
       if (response.ok) {
+        setLoading(false);
         setStatus("Mensaje enviado con éxito");
         console.log("Mensaje enviado con éxito");
       } else {
@@ -52,7 +115,7 @@ const ContactsDos = () => {
   };
 
   return (
-    <section className="text-gray-600 body-font ga relative">
+    <section id="contacts" className="text-gray-600 body-font ga relative">
       <div className="container px-5 sm:py-24 mx-auto grid sm:flex-nowrap  flex- wrap">
         <div className="flex flex-col lg:flex-row space-y-10 md:space-y-4 lg:space-y-0  lg:space-x-10">
           <div className="order-3 md:order-1 xl:w-2/12  w-12/12 bg-stone-100 rounded-2xl p-5 flex flex-col space-y-14 justify-center md:ml-auto w-full  ">
@@ -83,29 +146,44 @@ const ContactsDos = () => {
             <div className="text- gray-900 m -6 space-y-2 z-200">
               <div className="f ex ">
                 <input
+                  id="nombre"
                   placeholder="Name"
                   className="bg-gray-100 p-2 pl-5 w-full rounded-3xl"
                   value={nombre}
                   onChange={(e) => setNombre(e.target.value)}
                 />
+                {errores.nombre && (
+                  <p className="text-xs ml-4 text-red-600">{errores.nombre}</p>
+                )}
               </div>
               <div className="fl ex">
                 <input
+                  id="email"
                   placeholder="E-mail "
                   pattern=".+@example\.com"
                   required
                   type="email"
-                  id="destinatario"
-                  value={destinatario}
-                  onChange={(e) => setDestinatario(e.target.value)}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   className="bg-gray-100 p-2 pl-5 w-full rounded-3xl"
                 />
+                {errores.email && (
+                  <p className="text-xs ml-4 text-red-600">{errores.email}</p>
+                )}
               </div>
               <div className="fl ex">
                 <input
+                  id="telefono"
                   placeholder="Phone"
+                  value={telefono}
+                  onChange={handleTelefonoChange}
                   className="bg-gray-100 p-2 pl-5 w-full rounded-3xl"
                 />
+                {errores.telefono && (
+                  <p className="text-xs ml-4 text-red-600">
+                    {errores.telefono}
+                  </p>
+                )}
               </div>
               <div className="fl ex">
                 <textarea
@@ -117,15 +195,28 @@ const ContactsDos = () => {
                 />
               </div>
               <div className="block m-2 justify-center">
-                <div className="bg-amber-500 p-2 rounded-3xl hover:bg-blue-800 cursor-pointer ">
-                  <div className="flex justify-center" onClick={enviarMensaje}>
+                <div className="bg-amber-500 p-2 rounded-3xl hover:bg-amber-600 cursor-pointer ">
+                  <div
+                    className="flex justify-center font-bold text-sm tracking-wides"
+                    onClick={handleEnviarClick}
+                  >
                     {" "}
                     Send{" "}
                   </div>
                 </div>
               </div>
             </div>
-            <p className="text-xs text-gray-900 mt-3">{status}</p>
+            <p className="text-xs text-lime-700 font-bold mt-3 text-center">
+              {loading ? (
+                <Loader />
+              ) : (
+                <div className="flex flex-row justify-center space-x-1 items-center">
+                  <p className="flex items-center space-x-2">
+                    {status} {status ? <FaCheckCircle size={10} /> : ""}
+                  </p>
+                </div>
+              )}
+            </p>
           </div>
           <div className="order-1 md:order-3 xl:w-6/12 w-12/12 bg-a mber-400 justify-between flex flex-col">
             {" "}

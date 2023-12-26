@@ -1,6 +1,6 @@
 const AboutUs = () => {
   return (
-    <section className="bg-white dark:bg-gray-900">
+    <section id="aboutUs" className="bg-white dark:bg-gray-900">
       <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
         <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
           <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
@@ -20,13 +20,13 @@ const AboutUs = () => {
         </div>
         <div className="grid grid-cols-2 gap-4 mt-8">
           <img
-            className="w-full rounded-lg"
-            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png"
+            className="h-96 rounded-lg object-cover mb-10"
+            src="/atm-03.webp"
             alt="office content 1"
           />
           <img
-            className="mt-4 w-full lg:mt-10 rounded-lg"
-            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png"
+            className="mt-4 h-96 lg:mt-10 rounded-lg object-cover"
+            src="/atm01.jpeg"
             alt="office content 2"
           />
         </div>
