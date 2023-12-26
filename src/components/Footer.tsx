@@ -4,9 +4,9 @@ const Footer = () => {
       <div className="md:px-12 lg:px-28">
         <div className="container m-auto space-y-6 text-gray-600 dark:text-gray-300">
           <img
-            src="/public/logo-example.png"
-            alt="logo tailus"
-            className="m-auto w-20"
+            src="/public/logo-ip-02.svg"
+            alt="logo"
+            className="m-auto w-28"
           />
           <ul
             role="list"

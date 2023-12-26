@@ -63,7 +63,7 @@ export default function Navbar() {
     <div className={`fixed z-50 w-full `}>
       <nav
         className={`flex items-center justify-between p-2 will-change-scroll bg-scroll lg:px-8 transition-all duration-700 ${
-          scrolling ? "bg-gray-800" : "bg-transparent"
+          scrolling ? "bg-gray-800" : "dark:bg-transparent"
         }`}
         aria-label="Global"
       >
@@ -72,12 +72,12 @@ export default function Navbar() {
             <span className="sr-only">I & P ATM</span>
             <img
               className="h-10 ml-10 w-auto hidden dark:block"
-              src="/logo-ip-white.svg"
+              src="/public/logo-ip-02.svg"
               alt="dark mode logo"
             />
             <img
               className="h-10 ml-10 w-auto block dark:hidden"
-              src="/logo-ip-black.svg"
+              src="/public/logo-ip-01.svg"
               alt="light mode logo"
             />
           </a>

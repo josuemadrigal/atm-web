@@ -29,13 +29,12 @@ const Contacts = () => {
       id="contacts"
       className="flex justify-center  bg-gray-100 dark:bg-neutral-300"
     >
-      <div className="flex md:flex-row flex-col justify-center max-w-7xl  bg-green-900 ">
-        <div className="lg:w-1/2 items-center bg-orange-500">
+      <div className="flex md:flex-row flex-col justify-center max-w-7xl  bg-gre en-900 ">
+        <div className="lg:w-1/3 items-center bg-orange-500">
           <div className="flex justify-center flex-col items-center">
             <div className="text-gray-900 m-6 text-xl z-200"> Contact Us </div>
             <div className="text-gray-900 m-6 z-200">
-              {" "}
-              We are always here to help out whatever way we can{" "}
+              We are always here to help out whatever way we can
             </div>
             <div className="text-gray-900 m-6 z-200">
               <div className="flex m-2">
@@ -70,7 +69,7 @@ const Contacts = () => {
                 />
               </div>
               <div className="block m-2justify-center">
-                <div className="bg-blue-700 p-2 rounded-3xl hover:bg-blue-800 cursor-pointer ">
+                <div className="bg-amber-500 p-2 rounded-3xl hover:bg-blue-800 cursor-pointer ">
                   <div className="flex justify-center" onClick={enviarMensaje}>
                     {" "}
                     Send{" "}
@@ -80,13 +79,13 @@ const Contacts = () => {
             </div>
           </div>
         </div>
-        <div className="w-3/4 lg:w-2/3 ">
+        <div className="w-3/4 lg:w-1/3 bg-amber-300">
           <div className="w-3/4 lg:w-1/2 overflow-contain h-min">
             {" "}
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3597.325370562236!2d-80.4153221!3d25.6273246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9c36083a52943%3A0xa318cf43332f0309!2s13727%20SW%20152nd%20St%20NUM%20660%2C%20Miami%2C%20FL%2033177%2C%20EE.%20UU.!5e0!3m2!1ses!2sdo!4v1703304089825!5m2!1ses!2sdo"
-              width="500"
-              height="500"
+              width="90%"
+              height="90%"
               className=""
               loading="lazy"
             ></iframe>{" "}
