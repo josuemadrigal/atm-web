@@ -1,4 +1,8 @@
 import { TbClock24 } from "react-icons/tb";
+import { GrAtm } from "react-icons/gr";
+import { GrTransaction } from "react-icons/gr";
+import { MdPublishedWithChanges } from "react-icons/md";
+import { BiWorld } from "react-icons/bi";
 
 const Benefits = () => {
   const dataBenefits = [
@@ -10,17 +14,17 @@ const Benefits = () => {
     {
       beneficio: "Operational Efficiency",
       texto: "Lightens branch load and enhances transactions.",
-      icono: <TbClock24 size={50} />,
+      icono: <GrAtm size={50} />,
     },
     {
       beneficio: "Simplified Transactions",
       texto: "Streamlines and facilitates financial processes.",
-      icono: <TbClock24 size={50} />,
+      icono: <GrTransaction size={50} />,
     },
     {
       beneficio: "Global Cash Withdrawals",
       texto: "Vital access in emergency situations.",
-      icono: <TbClock24 size={50} />,
+      icono: <BiWorld size={50} />,
     },
   ];
   return (

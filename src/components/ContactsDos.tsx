@@ -23,23 +23,27 @@ const ContactsDos = () => {
       href: "mailto:info@example.com",
     },
   ];
-
+  const [status, setStatus] = useState("");
+  const [nombre, setNombre] = useState("");
   const [destinatario, setDestinatario] = useState("");
   const [mensaje, setMensaje] = useState("");
 
   const enviarMensaje = async () => {
+    const name = nombre.split(" ")[0];
     try {
       const response = await fetch("http://localhost:3001/enviar-mensaje", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ destinatario, mensaje }),
+        body: JSON.stringify({ name, destinatario, mensaje }),
       });
 
       if (response.ok) {
+        setStatus("Mensaje enviado con éxito");
         console.log("Mensaje enviado con éxito");
       } else {
+        setStatus("Error al enviar el mensaje");
         console.error("Error al enviar el mensaje");
       }
     } catch (error) {
@@ -48,20 +52,10 @@ const ContactsDos = () => {
   };
 
   return (
-    <section className="text-gray-600 body-font relative">
-      <div className="container px-5 py-24 mx-auto grid sm:flex-nowrap  flex- wrap">
-        {/* <div className="lg:w-2/6 md:w-1/2 bg-gray-300 rounded-2xl overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
-          <iframe
-            width="100%"
-            height="100%"
-            className="absolute inset-0"
-            title="map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3597.325370562236!2d-80.4153221!3d25.6273246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9c36083a52943%3A0xa318cf43332f0309!2s13727%20SW%20152nd%20St%20NUM%20660%2C%20Miami%2C%20FL%2033177%2C%20EE.%20UU.!5e0!3m2!1ses!2sdo!4v1703304089825!5m2!1ses!2sdo"
-          ></iframe>
-        </div> */}
-
-        <div className="flex space-x-10">
-          <div className="lg:w-2/12 md:w- 1/2 bg-stone-100 rounded-2xl p-5 flex flex-col space-y-14 justify-center md:ml-auto w-full md:py-8 mt-8 md:mt-0">
+    <section className="text-gray-600 body-font ga relative">
+      <div className="container px-5 sm:py-24 mx-auto grid sm:flex-nowrap  flex- wrap">
+        <div className="flex flex-col lg:flex-row space-y-10 md:space-y-4 lg:space-y-0  lg:space-x-10">
+          <div className="order-3 md:order-1 xl:w-2/12  w-12/12 bg-stone-100 rounded-2xl p-5 flex flex-col space-y-14 justify-center md:ml-auto w-full  ">
             {dataContact.map((item) => (
               <div className="text-center text-gray-500 dark:text-amber-400">
                 <div className="flex justify-center">{item.ico}</div>
@@ -77,23 +71,29 @@ const ContactsDos = () => {
               </div>
             ))}
           </div>
-          <div className="lg:w-3/12 md:w- 1/2 bg-neutral-200 rounded-2xl p-10 flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
-            <h2 className="text-gray-900 text-lg mb-1 font-medium title-font">
-              Feedback
+          <div className="order-2 md:order-2 xl:w-4/12 w-12/12 bg-neutral-200 rounded-2xl p-10 flex flex-col md:ml- auto w-full ">
+            <h2 className="text- gray-900 text-lg mb-1 font-black title-font">
+              Contact our Sales team
             </h2>
             <p className="leading-relaxed mb-5 text-gray-600">
-              Post-ironic portland shabby chic echo park, banjo fashion axe
+              Fill out this form, and we'll get in touch with you as soon as
+              possible. We look forward to receiving your information and
+              assisting you promptly!
             </p>
-            <div className="text-gray-900 m -6 space-y-2 z-200">
+            <div className="text- gray-900 m -6 space-y-2 z-200">
               <div className="f ex ">
                 <input
                   placeholder="Name"
                   className="bg-gray-100 p-2 pl-5 w-full rounded-3xl"
+                  value={nombre}
+                  onChange={(e) => setNombre(e.target.value)}
                 />
               </div>
               <div className="fl ex">
                 <input
                   placeholder="E-mail "
+                  pattern=".+@example\.com"
+                  required
                   type="email"
                   id="destinatario"
                   value={destinatario}
@@ -125,19 +125,24 @@ const ContactsDos = () => {
                 </div>
               </div>
             </div>
-            <p className="text-xs text-gray-900 mt-3">
-              Chicharrones blog helvetica normcore iceland tousled brook viral
-              artisan.
-            </p>
+            <p className="text-xs text-gray-900 mt-3">{status}</p>
           </div>
-          <div className="lg:w-7/12 md:w- 1/2 bg-a mber-400">
+          <div className="order-1 md:order-3 xl:w-6/12 w-12/12 bg-a mber-400 justify-between flex flex-col">
             {" "}
-            <h1 className="text-5xl font-black">Contactanos</h1>
-            <p>Hola</p>
-            <p>Hola</p>
-            <p>Hola</p>
+            <div className="">
+              <h2 className="text-small font-black text-amber-500 ">
+                Contact Us
+              </h2>
+              <h1 className="text-3xl font-black w-11/12">
+                Partner with us for a banking experience that prioritizes
+                innovation, reliability, efficiency, and global accessibility.
+              </h1>
+              <h4 className="mt-2 font-light">
+                We look forward to serving you soon!
+              </h4>
+            </div>
             <img src="/veteran-business.png" className="w-32 h-auto" />
-            <div className="lg:w-full lg:h-2/6 md:w-1/2 bg-stone-100 rounded-2xl overflow-hidden  p-3 flex flex-col space-y-14 justify-center md:ml-auto  md:py-8 mt-8 md:mt-0 relative">
+            <div className=" w-full h-32 bg-stone-100 rounded-2xl overflow-hidden  p-3 flex flex-col space-y-14 justify-center md:ml-auto  md:py-8 mt-8 md:mt-0 relative">
               <iframe
                 width="100%"
                 height="100%"

@@ -25,7 +25,7 @@ const transporter = nodemailer.createTransport({
 });
 
 app.post("/enviar-mensaje", async (req, res) => {
-  const { destinatario, mensaje } = req.body;
+  const { name, destinatario, mensaje } = req.body;
 
   // Enviar mensaje al correo
   await transporter.sendMail({
@@ -40,7 +40,7 @@ app.post("/enviar-mensaje", async (req, res) => {
     from: "josuemadrigal12@gmail.com",
     to: destinatario,
     subject: "Mensaje enviado con éxito",
-    text: "Tu mensaje ha sido enviado con éxito.",
+    text: `Hola ${name}, Tu mensaje ha sido enviado con éxito.`,
   });
 
   res.status(200).json({ message: "Mensaje enviado con éxito" });
