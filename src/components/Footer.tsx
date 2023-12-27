@@ -3,7 +3,16 @@ const Footer = () => {
     <footer className="w-full bg-gray-100 dark:bg-gray-900 py-16">
       <div className="md:px-12 lg:px-28">
         <div className="container m-auto space-y-6 text-gray-600 dark:text-gray-300">
-          <img src="logo-ip-04.svg" alt="logo" className="m-auto w-28" />
+          <img
+            src="logo-ip-04.svg"
+            alt="logo"
+            className="m-auto w-28 hidden dark:block"
+          />
+          <img
+            src="logo-ip-03.svg"
+            alt="logo"
+            className="m-auto w-28  dark:hidden"
+          />
           <ul
             role="list"
             className="flex flex-col items-center justify-center gap-4 py-4 sm:flex-row sm:gap-8"
