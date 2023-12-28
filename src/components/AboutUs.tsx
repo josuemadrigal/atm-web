@@ -15,7 +15,7 @@ const AboutUs = () => {
           <p>
             With a forward-thinking approach, we strive to boost customer
             satisfaction and operational efficiency through cutting-edge
-            technological solutions.9
+            technological solutions.
           </p>
         </div>
         <div className="grid grid-cols-2 gap-4 mt-8">
@@ -25,7 +25,7 @@ const AboutUs = () => {
             alt="office content 1"
           />
           <img
-            className="mt-4 h-96 lg:mt-10 rounded-lg object-cover"
+            className="mt-4 h-96 lg:mt-10 rounded-lg object-cover "
             src="/atm01.jpeg"
             alt="office content 2"
           />

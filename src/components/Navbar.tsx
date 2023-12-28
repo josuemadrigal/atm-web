@@ -63,7 +63,7 @@ export default function Navbar() {
     <div className={`fixed z-50 w-full `}>
       <nav
         className={`flex items-center justify-between p-2 will-change-scroll bg-scroll lg:px-8 transition-all duration-700 ${
-          scrolling ? "bg-gray-400 dark:bg-gray-900" : "dark:bg-transparent"
+          scrolling ? "bg-neutral-100 dark:bg-gray-900" : "dark:bg-transparent"
         }`}
         aria-label="Global"
       >

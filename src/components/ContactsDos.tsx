@@ -120,7 +120,7 @@ const ContactsDos = () => {
         <div className="flex flex-col lg:flex-row space-y-10 md:space-y-4 lg:space-y-0  lg:space-x-10">
           <div className="order-3 md:order-1 xl:w-2/12  w-12/12 bg-stone-100 rounded-2xl p-5 flex flex-col space-y-14 justify-center md:ml-auto w-full  ">
             {dataContact.map((item) => (
-              <div className="text-center text-gray-500 dark:text-amber-400">
+              <div className="text-center text-gray-500 dark:text-amber-500">
                 <div className="flex justify-center">{item.ico}</div>
                 <h2 className="font-black uppercase text-gray-900 text-lg ">
                   {item.title}
@@ -197,7 +197,7 @@ const ContactsDos = () => {
               <div className="block m-2 justify-center">
                 <div className="bg-amber-500 p-2 rounded-3xl hover:bg-amber-600 cursor-pointer ">
                   <div
-                    className="flex justify-center font-bold text-sm tracking-wides"
+                    className="flex justify-center font-bold text-sm tracking-wides text-blue-950"
                     onClick={handleEnviarClick}
                   >
                     {" "}
@@ -228,7 +228,7 @@ const ContactsDos = () => {
                 Partner with us for a banking experience that prioritizes
                 innovation, reliability, efficiency, and global accessibility.
               </h1>
-              <h4 className="mt-2 font-light">
+              <h4 className="mt-2 font-light ">
                 We look forward to serving you soon!
               </h4>
             </div>

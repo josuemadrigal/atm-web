@@ -40,7 +40,7 @@ const Team = () => {
         </div>
         <div className="md:flex justify-center md:gap-48 space-y-16 md:space-y-0">
           {teamData.map((team) => (
-            <div className="text-center text-gray-500 dark:text-gray-400">
+            <div className="text-center text-gray-500 dark:text-gray-400 items-center justify-center flex flex-col">
               <img
                 className="mx-auto mb-4 w-36 h-36 object-cover rounded-full"
                 src={team.image}
@@ -50,7 +50,8 @@ const Team = () => {
                 <a href="#">{team.nombre}</a>
               </h3>
               <p>{team.puesto}</p>
-              <ul className="flex justify-center mt-4 space-x-4">
+              <div className="h-1  w-1/2 rounded-xl bg-amber-500 mt-3"></div>
+              {/* <ul className="flex justify-center mt-4 space-x-4">
                 <li>
                   <a
                     href="#"
@@ -123,7 +124,7 @@ const Team = () => {
                     </svg>
                   </a>
                 </li>
-              </ul>
+              </ul> */}
             </div>
           ))}
         </div>

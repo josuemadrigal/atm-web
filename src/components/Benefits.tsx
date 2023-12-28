@@ -9,22 +9,22 @@ const Benefits = () => {
     {
       beneficio: "24/7 Convenience",
       texto: "Easy banking access at all times.",
-      icono: <TbClock24 size={50} />,
+      icono: <TbClock24 size={40} />,
     },
     {
       beneficio: "Operational Efficiency",
       texto: "Lightens branch load and enhances transactions.",
-      icono: <GrAtm size={50} />,
+      icono: <GrAtm size={40} />,
     },
     {
       beneficio: "Simplified Transactions",
       texto: "Streamlines and facilitates financial processes.",
-      icono: <GrTransaction size={50} />,
+      icono: <GrTransaction size={40} />,
     },
     {
       beneficio: "Global Cash Withdrawals",
       texto: "Vital access in emergency situations.",
-      icono: <BiWorld size={50} />,
+      icono: <BiWorld size={40} />,
     },
   ];
   return (
@@ -48,7 +48,7 @@ const Benefits = () => {
         <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6 items-center justify-center">
           {dataBenefits.map((item) => (
             <div className="p-4 md:w-1/4 flex flex-col text-center items-center">
-              <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-amber-100 text-[#0D1717] mb-5 flex-shrink-0">
+              <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-amber-500 text-[#0D1717] mb-5 flex-shrink-0">
                 {item.icono}
               </div>
               <div className="flex-grow space-y-1">
