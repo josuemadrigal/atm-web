@@ -16,11 +16,19 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 // Configuración de nodemailer (ajusta esto con tus propios datos)
+// const transporter = nodemailer.createTransport({
+//   service: "gmail",
+//   auth: {
+//     user: "josuemadrigal12@gmail.com",
+//     pass: "sean ygkb eoet sopp",
+//   },
+// });
+
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "josuemadrigal12@gmail.com",
-    pass: "sean ygkb eoet sopp",
+    user: "isaacpaniaguallc@gmail.com",
+    pass: "cmvq jnzg rhxh hvmq",
   },
 });
 
@@ -30,14 +38,14 @@ app.post("/enviar-mensaje", async (req, res) => {
   // Enviar mensaje al correo
   await transporter.sendMail({
     from: "ejemplo",
-    to: "josuemadrigal12@gmail.com",
-    subject: "Nuevo mensaje recibido",
+    to: "isaacpaniaguallc@gmail.com",
+    subject: "Nuevo mensaje recibido desde la Web",
     text: mensaje,
   });
 
   // Enviar correo de confirmación al
   await transporter.sendMail({
-    from: "josuemadrigal12@gmail.com",
+    from: "isaacpaniaguallc@gmail.com",
     to: email,
     subject: "Mensaje enviado con éxito",
     text: `Hola ${name}, Tu mensaje ha sido enviado con éxito.`,

@@ -88,16 +88,13 @@ const ContactsDos = () => {
   const enviarMensaje = async () => {
     const name = nombre.split(" ")[0];
     try {
-      const response = await fetch(
-        "http://server.jmmultimediard.com/enviar-mensaje",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ name, email, mensaje }),
-        }
-      );
+      const response = await fetch("http://localhost:3001/enviar-mensaje", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, mensaje }),
+      });
 
       await new Promise((resolve) => setTimeout(resolve, 2000));
 
