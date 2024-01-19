@@ -15,14 +15,14 @@ const ContactsDos = () => {
     {
       ico: <MdEmail size={25} />,
       title: "Email",
-      data: "info@example.com",
-      href: "mailto:info@example.com",
+      data: "isaacpaniaguallc@gmail.com",
+      href: "mailto:isaacpaniaguallc@gmail.com",
     },
     {
       ico: <MdEmail size={25} />,
       title: "Address",
       data: "13727 SW 152ND ST NUM 660, MIAMI, FL 33177, USA",
-      href: "mailto:info@example.com",
+      href: "https://www.google.com/maps/place/13727+SW+152nd+St+num+660,+Miami,+FL+33177,+EE.+UU./@25.6273246,-80.4153221,17z/data=!3m1!4b1!4m6!3m5!1s0x88d9c22bdb4427c7:0x3df4ab2a1479a642!8m2!3d25.6273246!4d-80.4153221!16s%2Fg%2F11vpnq1drl?entry=ttu",
     },
   ];
   const [loading, setLoading] = useState(false);
@@ -88,13 +88,16 @@ const ContactsDos = () => {
   const enviarMensaje = async () => {
     const name = nombre.split(" ")[0];
     try {
-      const response = await fetch("http://localhost:3001/enviar-mensaje", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name, email, mensaje }),
-      });
+      const response = await fetch(
+        "https://server.jmmultimediard.com/enviar-mensaje",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ name, email, mensaje }),
+        }
+      );
 
       await new Promise((resolve) => setTimeout(resolve, 2000));
 
